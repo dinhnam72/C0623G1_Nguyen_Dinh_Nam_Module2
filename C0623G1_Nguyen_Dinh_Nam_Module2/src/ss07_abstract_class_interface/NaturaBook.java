@@ -1,18 +1,18 @@
 package ss07_abstract_class_interface;
 
 public class NaturaBook extends Book implements IBook {
-    private int soLuong;
+    private int publishQuantity;
 
     public NaturaBook() {
     }
 
-    public NaturaBook(String tenSach, String nhaXuatBan, String namXuatBan, int soLuong) {
-        super(tenSach, nhaXuatBan, namXuatBan);
-        this.soLuong = soLuong;
+    public NaturaBook(String name, String publisher, String publisherYear, int publishQuantity) {
+        super(name, publisher, publisherYear);
+        this.publishQuantity = publishQuantity;
     }
 
     @Override
     public void display() {
-        System.out.println(super.toString() + "so luong: " + this.soLuong+'\'');
+        System.out.println(super.toString() + "publish quantity: " + this.publishQuantity +'\'');
     }
 }

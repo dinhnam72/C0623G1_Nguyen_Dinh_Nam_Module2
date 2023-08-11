@@ -1,24 +1,25 @@
 package ss07_abstract_class_interface;
 
 public abstract class Book implements IBook {
-    private String tenSach;
-    private String nhaXuatBan;
-    private String namXuatBan;
+    private String name;
+    private String publisher;
+    private String publisherYear;
 
     public Book() {
     }
 
-    public Book(String tenSach, String nhaXuatBan, String namXuatBan) {
-        this.tenSach = tenSach;
-        this.nhaXuatBan = nhaXuatBan;
-        this.namXuatBan = namXuatBan;
+    public Book(String name, String publisher, String publisherYear) {
+        this.name = name;
+        this.publisher = publisher;
+        this.publisherYear = publisherYear;
     }
 
     @Override
     public String toString() {
-        return "tenSach='" + tenSach + '\'' +
-                ", nhaXuatBan='" + nhaXuatBan + '\'' +
-                ", namXuatBan='" + namXuatBan + '\''
-                ;
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", publisherYear='" + publisherYear + '\'' +
+                '}';
     }
 }
