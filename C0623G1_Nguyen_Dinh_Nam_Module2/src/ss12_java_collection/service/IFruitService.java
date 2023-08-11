@@ -1,6 +1,8 @@
-package ss10_list.service;
+package ss12_java_collection.service;
 
 public interface IFruitService {
-    void display();
-    void add();
+    void displayFruit();
+    void addFruit();
+    void removeFruit();
+    void editFruit();
 }

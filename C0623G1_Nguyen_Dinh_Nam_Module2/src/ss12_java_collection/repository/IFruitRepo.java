@@ -1,10 +1,13 @@
-package ss10_list.repository;
+package ss12_java_collection.repository;
 
-import ss10_list.model.Fruit;
+import ss12_java_collection.model.Fruit;
 
-import java.util.List;
+import java.util.Map;
 
 public interface IFruitRepo {
-    List<Fruit> getAll();
-    void add(Fruit fruit);
+    Map<String,Fruit> getAll();
+    boolean checkKey(String key);
+    void addFruit(String key,Fruit fruit);
+    void removeFruit (String key);
+    void editFruit (String key, Fruit fruit);
 }

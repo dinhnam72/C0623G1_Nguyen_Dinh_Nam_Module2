@@ -1,7 +1,6 @@
-package ss10_list.view;
+package ss12_java_collection.view;
 
-import ss10_list.controller.FruitController;
-import ss10_list.model.Fruit;
+import ss12_java_collection.controller.FruitController;
 
 public class View {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ss10_list.model;
+package ss12_java_collection.model;
 
 public class Fruit {
     private String name;
@@ -17,6 +17,7 @@ public class Fruit {
         this.made = made;
         this.price = price;
     }
+
 
     public String getName() {
         return name;
@@ -74,7 +75,8 @@ public class Fruit {
                 ", dateOfManufacture='" + dateOfManufacture + '\'' +
                 ", expirationDate='" + expirationDate + '\'' +
                 ", made='" + made + '\'' +
-                ", price='" + price + '\'' +
+                ", price=" + price +
                 '}';
     }
+
 }
