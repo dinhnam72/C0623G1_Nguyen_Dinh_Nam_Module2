@@ -5,7 +5,7 @@ public class CleanCode {
         int sum = number1 + number2 + number3;
         return sum;
     }
-    public void employeeDetails(Empluyee empluyee){}
+    public void employeeDetails(Employee empluyee){}
 
     public boolean isLeapYear(int year) {
 
