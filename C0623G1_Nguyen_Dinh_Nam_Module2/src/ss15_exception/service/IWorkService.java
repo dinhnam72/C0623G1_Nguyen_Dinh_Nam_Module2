@@ -1,4 +1,4 @@
-package ss14_sort.service;
+package ss15_exception.service;
 
 public interface IWorkService {
     void display();

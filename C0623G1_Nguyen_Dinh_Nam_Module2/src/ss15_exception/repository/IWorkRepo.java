@@ -1,6 +1,6 @@
-package ss14_sort.repository;
+package ss15_exception.repository;
 
-import ss14_sort.model.Work;
+import ss15_exception.model.Work;
 
 import java.util.List;
 

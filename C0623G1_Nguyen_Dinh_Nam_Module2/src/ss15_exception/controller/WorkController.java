@@ -1,7 +1,7 @@
-package ss14_sort.controller;
+package ss15_exception.controller;
 
-import ss14_sort.service.IWorkService;
-import ss14_sort.service.WorkService;
+import ss15_exception.service.IWorkService;
+import ss15_exception.service.WorkService;
 
 import java.util.Scanner;
 
@@ -34,6 +34,7 @@ public class WorkController {
                     break;
                 case 4:
                     workService.edit();
+                    break;
                 case 5:
                     workService.searchToId();
                     break;

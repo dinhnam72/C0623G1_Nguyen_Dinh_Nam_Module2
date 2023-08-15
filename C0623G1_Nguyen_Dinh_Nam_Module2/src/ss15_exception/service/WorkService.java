@@ -1,8 +1,10 @@
-package ss14_sort.service;
+package ss15_exception.service;
 
-import ss14_sort.model.Work;
-import ss14_sort.repository.IWorkRepo;
-import ss14_sort.repository.WorkRepo;
+import ss15_exception.exception.IdNotFoundException;
+import ss15_exception.exception.UniqueIDException;
+import ss15_exception.model.Work;
+import ss15_exception.repository.IWorkRepo;
+import ss15_exception.repository.WorkRepo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,23 +16,30 @@ public class WorkService implements IWorkService {
 
     @Override
     public void display() {
-        for (Work congViec : workRepo.getAll()) {
-            System.out.println(congViec);
+        for (Work work : workRepo.getAll()) {
+            System.out.println(work);
         }
     }
 
     Scanner scanner = new Scanner(System.in);
-
+    boolean flag;
     @Override
     public void add() {
-        String id;
+        String id="";
+
         do {
-            System.out.print("Nhap id: ");
-            id = scanner.nextLine();
-            if (workRepo.checkId(id) != -1) {
-                System.out.println("Id da ton tai");
-            }
-        } while (workRepo.checkId(id) != -1);
+            flag =false;
+                System.out.print("Nhap id: ");
+                try {
+                    id = scanner.nextLine();
+                    if (workRepo.checkId(id) != -1) {
+                        throw new UniqueIDException();
+                    }
+                } catch (UniqueIDException e){
+                    System.out.println("Id da ton tai");
+                    flag =true;
+                }
+        } while (flag);
 
         System.out.print("Nhap name: ");
         String name = scanner.nextLine();
@@ -40,21 +49,27 @@ public class WorkService implements IWorkService {
         double money = Double.parseDouble(scanner.nextLine());
         System.out.print("Nhap describe: ");
         String describe = scanner.nextLine();
-        Work workflowManagement = new Work(id, name, date, money, describe);
-        workRepo.add(workflowManagement);
+        Work work = new Work(id, name, date, money, describe);
+        workRepo.add(work);
     }
-
 
     @Override
     public void remove() {
-        String id;
+        String id="";
         do {
+            flag =false;
             System.out.print("Nhap id: ");
-            id = scanner.nextLine();
-            if (workRepo.checkId(id) == -1) {
-                System.out.println("Id khong ton tai");
+            try {
+                id = scanner.nextLine();
+                if (workRepo.checkId(id) == -1) {
+                    throw new IdNotFoundException();
+                }
+            }catch (IdNotFoundException e){
+                System.out.println("id khong ton tai");
+                flag = true;
             }
-        } while (workRepo.checkId(id) == -1);
+
+        } while (flag);
         workRepo.remove(id);
     }
 
@@ -114,7 +129,7 @@ public class WorkService implements IWorkService {
     @Override
     public void sortToName() {
         List<Work> works = workRepo.sortToName();
-        for (Work work:works){
+        for (Work work : works) {
             System.out.println(work);
         }
     }
@@ -122,7 +137,7 @@ public class WorkService implements IWorkService {
     @Override
     public void sortToMoney() {
         List<Work> works = workRepo.sortToMoney();
-        for (Work work:works){
+        for (Work work : works) {
             System.out.println(work);
         }
     }

@@ -1,6 +1,6 @@
-package ss14_sort.repository;
+package ss15_exception.repository;
 
-import ss14_sort.model.Work;
+import ss15_exception.model.Work;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,8 +30,8 @@ public class WorkRepo implements IWorkRepo {
     }
 
     @Override
-    public void add(Work workflowManagement) {
-        workList.add(workflowManagement);
+    public void add(Work work) {
+        workList.add(work);
     }
 
     @Override
