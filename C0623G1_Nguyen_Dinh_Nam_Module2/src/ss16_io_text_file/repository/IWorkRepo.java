@@ -1,6 +1,6 @@
-package ss15_exception.repository;
+package ss16_io_text_file.repository;
 
-import ss15_exception.model.Work;
+import ss16_io_text_file.model.Work;
 
 import java.util.List;
 

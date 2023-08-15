@@ -1,4 +1,4 @@
-package ss15_exception.service;
+package ss16_io_text_file.service;
 
 public interface IWorkService {
     void display();

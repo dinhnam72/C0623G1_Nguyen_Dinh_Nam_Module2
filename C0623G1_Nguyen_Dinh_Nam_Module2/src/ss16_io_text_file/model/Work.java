@@ -1,4 +1,4 @@
-package ss15_exception.model;
+package ss16_io_text_file.model;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -68,13 +68,17 @@ public class Work {
 
     @Override
     public String toString() {
-        return "QuanLyCongViec{" +
+        return "Work{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", date=" + date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) +
                 ", money=" + money +
                 ", describe='" + describe + '\'' +
                 '}';
+    }
+
+    public String inforToCSV() {
+        return this.id + "," + this.name + "," + this.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "," + this.money + "," + this.describe;
     }
 
     @Override

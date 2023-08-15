@@ -1,10 +1,10 @@
-package ss15_exception.service;
+package ss16_io_text_file.service;
 
-import ss15_exception.exception.IdNotFoundException;
-import ss15_exception.exception.UniqueIDException;
-import ss15_exception.model.Work;
-import ss15_exception.repository.IWorkRepo;
-import ss15_exception.repository.WorkRepo;
+import ss16_io_text_file.exception.IdNotFoundException;
+import ss16_io_text_file.exception.UniqueIDException;
+import ss16_io_text_file.model.Work;
+import ss16_io_text_file.repository.IWorkRepo;
+import ss16_io_text_file.repository.WorkRepo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -16,8 +16,8 @@ public class WorkService implements IWorkService {
 
     @Override
     public void display() {
-        for (Work congViec : workRepo.getAll()) {
-            System.out.println(congViec);
+        for (Work work : workRepo.getAll()) {
+            System.out.println(work);
         }
     }
 

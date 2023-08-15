@@ -1,7 +1,7 @@
-package ss15_exception.controller;
+package ss16_io_text_file.controller;
 
-import ss15_exception.service.IWorkService;
-import ss15_exception.service.WorkService;
+import ss16_io_text_file.service.IWorkService;
+import ss16_io_text_file.service.WorkService;
 
 import java.util.Scanner;
 
@@ -34,6 +34,7 @@ public class WorkController {
                     break;
                 case 4:
                     workService.edit();
+                    break;
                 case 5:
                     workService.searchToId();
                     break;

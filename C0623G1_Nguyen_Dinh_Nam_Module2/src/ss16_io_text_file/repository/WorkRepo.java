@@ -1,6 +1,7 @@
-package ss15_exception.repository;
+package ss16_io_text_file.repository;
 
-import ss15_exception.model.Work;
+import ss16_io_text_file.model.Work;
+import ss16_io_text_file.util.ReadAndWriteFile;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -10,54 +11,73 @@ import java.util.Comparator;
 import java.util.List;
 
 public class WorkRepo implements IWorkRepo {
-    private static List<Work> workList = new ArrayList<>();
-
-    static {
-        workList.add(new Work("1", "Nuoi ca", LocalDate.parse("14/04/2023", DateTimeFormatter.ofPattern("dd/MM/yyyy")), 30000, "asdsad"));
-        workList.add(new Work("2", "Trong Rau", LocalDate.parse("05/08/2023", DateTimeFormatter.ofPattern("dd/MM/yyyy")), 450000, "fsgfdsgfd"));
-        workList.add(new Work("3", "Kinh Doanh", LocalDate.parse("10/11/2023", DateTimeFormatter.ofPattern("dd/MM/yyyy")), 365420, "werew"));
-    }
+    private final static String FILE_PATH = "D:\\Codegym\\module2_1" +
+            "\\C0623G1_Nguyen_Dinh_Nam_Module2\\C0623G1_Nguyen_Dinh_Nam_Module2\\src\\ss16_io_text_file\\data\\work.csv";
 
     @Override
     public List<Work> getAll() {
+        List<Work> workList = new ArrayList<>();
+        List<String> stringList = ReadAndWriteFile.ReadFromCSV(FILE_PATH);
+        String[] string;
+        Work work;
+        for (String str : stringList) {
+            string = str.split(",");
+            work = new Work(string[0], string[1], LocalDate.parse(string[2], DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                    Double.parseDouble(string[3]), string[4]);
+            workList.add(work);
+        }
         return workList;
     }
 
     @Override
     public int checkId(String id) {
-        int index = workList.indexOf(new Work(id));
+        int index = getAll().indexOf(new Work(id));
         return index;
     }
 
     @Override
-    public void add(Work workflowManagement) {
-        workList.add(workflowManagement);
+    public void add(Work work) {
+        List<String> strings = new ArrayList<>();
+        strings.add(work.inforToCSV());
+        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, true);
     }
 
     @Override
     public void remove(String id) {
-        workList.remove(checkId(id));
+        List<Work> works = getAll();
+        works.remove(checkId(id));
+        List<String> strings = new ArrayList<>();
+        for (Work work : works) {
+            strings.add(work.inforToCSV());
+        }
+        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, false);
     }
 
     @Override
     public void edit(String id, Work work) {
-        int index = checkId(id);
-        workList.set(index, work);
+        List<Work> works = getAll();
+        works.set(checkId(id), work);
+        List<String> strings = new ArrayList<>();
+        for (Work work1 : works) {
+            strings.add(work1.inforToCSV());
+        }
+        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, false);
     }
-
 
     @Override
     public List<Work> searchToId(String id) {
+        List<Work> works = getAll();
         List<Work> work = new ArrayList<>();
         int index = checkId(id);
-        work.add(workList.get(index));
+        work.add(works.get(index));
         return work;
     }
 
     @Override
     public List<Work> searchToName(String name) {
+        List<Work> works = getAll();
         List<Work> workToName = new ArrayList<>();
-        for (Work work : workList) {
+        for (Work work : works) {
             if (work.getName().contains(name)) {
                 workToName.add(work);
             }
@@ -85,10 +105,10 @@ public class WorkRepo implements IWorkRepo {
         Collections.sort(works, new Comparator<Work>() {
             @Override
             public int compare(Work o1, Work o2) {
-                if (o1.getMoney()== o2.getMoney()){
+                if (o1.getMoney() == o2.getMoney()) {
                     return o1.getName().compareTo(o2.getName());
-                }else {
-                    return (int) (o1.getMoney()-o2.getMoney());
+                } else {
+                    return (int) (o1.getMoney() - o2.getMoney());
                 }
             }
         });
