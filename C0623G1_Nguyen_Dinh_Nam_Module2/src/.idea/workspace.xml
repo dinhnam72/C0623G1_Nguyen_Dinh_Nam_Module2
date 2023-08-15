@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="322c9c7c-7dbb-4f60-ab28-b3b229c14401" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ss13_search/controller/WorkController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss13_search/model/Work.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss13_search/repository/IWorkRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss13_search/repository/WorkRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss13_search/service/IWorkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss13_search/service/WorkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss13_search/view/View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss14_sort/controller/WorkController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss14_sort/model/Work.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss14_sort/repository/IWorkRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss14_sort/repository/WorkRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss14_sort/service/IWorkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss14_sort/service/WorkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss14_sort/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss11_stack_queue/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_stack_queue/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss13_search/common/NhapDuLieu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss13_search/model/QuanLyCongViec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss13_search/repository/IQuanLyCongViecRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss13_search/repository/QuanLyCongViecRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss13_search/service/IQuanLyCongViecService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss13_search/service/QuanLyCongViecService.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2TyoZZ1Svp9zguBNS98yaGObGHo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Codegym/module2_1/C0623G1_Nguyen_Dinh_Nam_Module2/C0623G1_Nguyen_Dinh_Nam_Module2/src",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="322c9c7c-7dbb-4f60-ab28-b3b229c14401" name="Changes" comment="" />
+      <created>1692024737521</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692024737521</updated>
+      <workItem from="1692024738651" duration="10000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
