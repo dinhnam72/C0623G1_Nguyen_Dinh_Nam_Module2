@@ -1,7 +1,7 @@
-package ss13_search.controller;
+package ss14_sort.controller;
 
-import ss13_search.service.IWorkService;
-import ss13_search.service.WorkService;
+import ss14_sort.service.IWorkService;
+import ss14_sort.service.WorkService;
 
 import java.util.Scanner;
 
@@ -17,7 +17,9 @@ public class WorkController {
             System.out.println("4. Edit");
             System.out.println("5. Search to id");
             System.out.println("6. Search to name");
-            System.out.println("7. Exit");
+            System.out.println("7. Sort to name");
+            System.out.println("8. Sort to money");
+            System.out.println("9. Exit");
             System.out.print("Nhap so: ");
             int select = Integer.parseInt(scanner.nextLine());
             switch (select) {
@@ -32,6 +34,7 @@ public class WorkController {
                     break;
                 case 4:
                     workService.edit();
+                    break;
                 case 5:
                     workService.searchToId();
                     break;
@@ -39,6 +42,12 @@ public class WorkController {
                     workService.searchToName();
                     break;
                 case 7:
+                    workService.sortToName();
+                    break;
+                case 8:
+                    workService.sortToMoney();
+                    break;
+                case 9:
                     System.exit(0);
                 default:
                     System.out.println("So ban nhap khong co");

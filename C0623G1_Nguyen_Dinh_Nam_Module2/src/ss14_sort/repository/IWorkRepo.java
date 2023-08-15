@@ -1,6 +1,6 @@
-package ss13_search.repository;
+package ss14_sort.repository;
 
-import ss13_search.model.Work;
+import ss14_sort.model.Work;
 
 import java.util.List;
 
@@ -18,4 +18,6 @@ public interface IWorkRepo {
     List<Work> searchToId(String id);
 
     List<Work> searchToName(String name);
+    List<Work> sortToName();
+    List<Work> sortToMoney();
 }

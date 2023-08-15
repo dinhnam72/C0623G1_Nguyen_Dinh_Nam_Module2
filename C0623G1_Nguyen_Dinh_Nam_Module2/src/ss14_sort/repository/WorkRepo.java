@@ -1,10 +1,12 @@
-package ss13_search.repository;
+package ss14_sort.repository;
 
-import ss13_search.model.Work;
+import ss14_sort.model.Work;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class WorkRepo implements IWorkRepo {
@@ -28,8 +30,8 @@ public class WorkRepo implements IWorkRepo {
     }
 
     @Override
-    public void add(Work workflowManagement) {
-        workList.add(workflowManagement);
+    public void add(Work work) {
+        workList.add(work);
     }
 
     @Override
@@ -55,11 +57,41 @@ public class WorkRepo implements IWorkRepo {
     @Override
     public List<Work> searchToName(String name) {
         List<Work> workToName = new ArrayList<>();
-        for (Work work:workList){
-            if (work.getName().contains(name)){
+        for (Work work : workList) {
+            if (work.getName().contains(name)) {
                 workToName.add(work);
             }
         }
         return workToName;
+    }
+
+    @Override
+    public List<Work> sortToName() {
+        List<Work> works = getAll();
+        Collections.sort(
+                works, new Comparator<Work>() {
+                    @Override
+                    public int compare(Work o1, Work o2) {
+                        return o1.getName().compareTo(o2.getName());
+                    }
+                }
+        );
+        return works;
+    }
+
+    @Override
+    public List<Work> sortToMoney() {
+        List<Work> works = getAll();
+        Collections.sort(works, new Comparator<Work>() {
+            @Override
+            public int compare(Work o1, Work o2) {
+                if (o1.getMoney()== o2.getMoney()){
+                    return o1.getName().compareTo(o2.getName());
+                }else {
+                    return (int) (o1.getMoney()-o2.getMoney());
+                }
+            }
+        });
+        return works;
     }
 }

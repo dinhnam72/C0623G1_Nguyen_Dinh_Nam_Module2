@@ -1,7 +1,8 @@
-package ss13_search.model;
+package ss14_sort.model;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Work {
@@ -68,7 +69,7 @@ public class Work {
 
     @Override
     public String toString() {
-        return "QuanLyCongViec{" +
+        return "Work{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", date=" + date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) +
@@ -84,5 +85,5 @@ public class Work {
         Work that = (Work) o;
         return Objects.equals(id, that.id);
     }
-    
+
 }

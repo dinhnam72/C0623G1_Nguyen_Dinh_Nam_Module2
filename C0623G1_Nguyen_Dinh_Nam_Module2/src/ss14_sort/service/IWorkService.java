@@ -1,4 +1,4 @@
-package ss13_search.service;
+package ss14_sort.service;
 
 public interface IWorkService {
     void display();
@@ -7,4 +7,6 @@ public interface IWorkService {
     void edit();
     void searchToId();
     void searchToName();
+    void sortToName();
+    void sortToMoney();
 }

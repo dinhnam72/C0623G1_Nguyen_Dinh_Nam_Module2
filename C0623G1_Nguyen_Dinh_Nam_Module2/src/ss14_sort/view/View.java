@@ -1,6 +1,6 @@
-package ss13_search.view;
+package ss14_sort.view;
 
-import ss13_search.controller.WorkController;
+import ss14_sort.controller.WorkController;
 
 public class View {
     public static void main(String[] args) {

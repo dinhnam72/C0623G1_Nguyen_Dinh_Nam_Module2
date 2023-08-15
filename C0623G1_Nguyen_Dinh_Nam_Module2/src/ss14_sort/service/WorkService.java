@@ -1,9 +1,8 @@
-package ss13_search.service;
+package ss14_sort.service;
 
-import ss13_search.controller.WorkController;
-import ss13_search.model.Work;
-import ss13_search.repository.IWorkRepo;
-import ss13_search.repository.WorkRepo;
+import ss14_sort.model.Work;
+import ss14_sort.repository.IWorkRepo;
+import ss14_sort.repository.WorkRepo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -15,8 +14,8 @@ public class WorkService implements IWorkService {
 
     @Override
     public void display() {
-        for (Work congViec : workRepo.getAll()) {
-            System.out.println(congViec);
+        for (Work work : workRepo.getAll()) {
+            System.out.println(work);
         }
     }
 
@@ -41,8 +40,8 @@ public class WorkService implements IWorkService {
         double money = Double.parseDouble(scanner.nextLine());
         System.out.print("Nhap describe: ");
         String describe = scanner.nextLine();
-        Work workflowManagement = new Work(id, name, date, money, describe);
-        workRepo.add(workflowManagement);
+        Work work = new Work(id, name, date, money, describe);
+        workRepo.add(work);
     }
 
 
@@ -109,6 +108,22 @@ public class WorkService implements IWorkService {
             for (Work work : workToName) {
                 System.out.println(work);
             }
+        }
+    }
+
+    @Override
+    public void sortToName() {
+        List<Work> works = workRepo.sortToName();
+        for (Work work:works){
+            System.out.println(work);
+        }
+    }
+
+    @Override
+    public void sortToMoney() {
+        List<Work> works = workRepo.sortToMoney();
+        for (Work work:works){
+            System.out.println(work);
         }
     }
 }
