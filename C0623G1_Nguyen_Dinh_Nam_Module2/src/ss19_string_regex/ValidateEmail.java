@@ -2,7 +2,7 @@ package ss19_string_regex;
 
 public class ValidateEmail {
     public static void main(String[] args) {
-        String test1 = "asdasdsa@sdfds.sdfsdf";
+        String test1 = "asdaa@sdfds.sdfsdf";
         String test2 = "Asdas3432dsa@sdfds.sdfsdf";
         String test3 = "asAD343dasdsa@gmail.c";
         System.out.print(test1 + " : ");
@@ -14,7 +14,7 @@ public class ValidateEmail {
 
     }
 
-    private static final String REX = "^\\w{9,32}@\\w{2,12}\\.\\w{2,12}";
+    private static final String REX = "^\\w{6,32}@\\w{2,12}\\.\\w{2,12}";
 
     public static void checkString(String str) {
         if (str.matches(REX)) {
