@@ -1,10 +1,12 @@
-package ss16_io_text_file.service;
+package ss17_binary_file.service;
 
-import ss16_io_text_file.exception.IdNotFoundException;
-import ss16_io_text_file.exception.UniqueIDException;
-import ss16_io_text_file.model.Work;
-import ss16_io_text_file.repository.IWorkRepo;
-import ss16_io_text_file.repository.WorkRepo;
+
+
+import ss17_binary_file.exception.IdNotFoundException;
+import ss17_binary_file.exception.UniqueIDException;
+import ss17_binary_file.model.Work;
+import ss17_binary_file.repository.IWorkRepo;
+import ss17_binary_file.repository.WorkRepo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -25,8 +27,7 @@ public class WorkService implements IWorkService {
     boolean flag;
     @Override
     public void add() {
-        String id="";
-
+        String id ="";
         do {
             flag =false;
                 System.out.print("Nhap id: ");

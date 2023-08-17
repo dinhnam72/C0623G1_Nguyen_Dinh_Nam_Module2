@@ -1,6 +1,8 @@
-package ss16_io_text_file.repository;
+package ss17_binary_file.repository;
 
-import ss16_io_text_file.model.Work;
+
+
+import ss17_binary_file.model.Work;
 
 import java.util.List;
 

@@ -1,15 +1,18 @@
-package ss16_io_text_file.model;
+package ss17_binary_file.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Work {
+public class Work implements Serializable {
     private String id;
     private String name;
     private LocalDate date;
     private double money;
     private String describe;
+    private static final long serialVersionUID = 72L;
+
 
     public Work() {
     }
@@ -75,10 +78,6 @@ public class Work {
                 ", money=" + money +
                 ", describe='" + describe + '\'' +
                 '}';
-    }
-
-    public String inforToCSV() {
-        return this.id + "," + this.name + "," + this.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "," + this.money + "," + this.describe;
     }
 
     @Override

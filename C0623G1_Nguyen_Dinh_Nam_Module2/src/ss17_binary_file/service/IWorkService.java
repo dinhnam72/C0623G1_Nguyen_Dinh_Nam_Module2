@@ -1,4 +1,4 @@
-package ss16_io_text_file.service;
+package ss17_binary_file.service;
 
 public interface IWorkService {
     void display();

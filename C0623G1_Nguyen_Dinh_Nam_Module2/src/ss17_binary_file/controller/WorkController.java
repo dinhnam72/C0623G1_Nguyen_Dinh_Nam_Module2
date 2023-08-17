@@ -1,7 +1,9 @@
-package ss16_io_text_file.controller;
+package ss17_binary_file.controller;
 
-import ss16_io_text_file.service.IWorkService;
-import ss16_io_text_file.service.WorkService;
+
+
+import ss17_binary_file.service.IWorkService;
+import ss17_binary_file.service.WorkService;
 
 import java.util.Scanner;
 

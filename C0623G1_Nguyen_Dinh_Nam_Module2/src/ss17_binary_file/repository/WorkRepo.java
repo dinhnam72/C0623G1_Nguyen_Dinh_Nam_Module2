@@ -1,7 +1,10 @@
-package ss16_io_text_file.repository;
+package ss17_binary_file.repository;
 
-import ss16_io_text_file.model.Work;
-import ss16_io_text_file.util.ReadAndWriteFile;
+
+
+
+import ss17_binary_file.model.Work;
+import ss17_binary_file.util.ReadAndWriteFile;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -12,20 +15,10 @@ import java.util.List;
 
 public class WorkRepo implements IWorkRepo {
     private final static String FILE_PATH = "D:\\Codegym\\module2_1" +
-            "\\C0623G1_Nguyen_Dinh_Nam_Module2\\C0623G1_Nguyen_Dinh_Nam_Module2\\src\\ss16_io_text_file\\data\\work.csv";
-
+            "\\C0623G1_Nguyen_Dinh_Nam_Module2\\C0623G1_Nguyen_Dinh_Nam_Module2\\src\\ss17_binary_file\\data\\work.dat";
     @Override
     public List<Work> getAll() {
-        List<Work> workList = new ArrayList<>();
-        List<String> stringList = ReadAndWriteFile.ReadFromCSV(FILE_PATH);
-        String[] string;
-        Work work;
-        for (String str : stringList) {
-            string = str.split(",");
-            work = new Work(string[0], string[1], LocalDate.parse(string[2], DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                    Double.parseDouble(string[3]), string[4]);
-            workList.add(work);
-        }
+        List<Work> workList = ReadAndWriteFile.readFile(FILE_PATH);
         return workList;
     }
 
@@ -37,31 +30,23 @@ public class WorkRepo implements IWorkRepo {
 
     @Override
     public void add(Work work) {
-        List<String> strings = new ArrayList<>();
-        strings.add(work.inforToCSV());
-        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, true);
+        List<Work> workList = getAll();
+        workList.add(work);
+        ReadAndWriteFile.writeFile(FILE_PATH,workList);
     }
 
     @Override
     public void remove(String id) {
-        List<Work> works = getAll();
-        works.remove(checkId(id));
-        List<String> strings = new ArrayList<>();
-        for (Work work : works) {
-            strings.add(work.inforToCSV());
-        }
-        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, false);
+        List<Work> workList = getAll();
+        workList.remove(checkId(id));
+        ReadAndWriteFile.writeFile(FILE_PATH,workList);
     }
 
     @Override
     public void edit(String id, Work work) {
-        List<Work> works = getAll();
-        works.set(checkId(id), work);
-        List<String> strings = new ArrayList<>();
-        for (Work work1 : works) {
-            strings.add(work1.inforToCSV());
-        }
-        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, false);
+        List<Work> workList = getAll();
+        workList.set(checkId(id), work);
+        ReadAndWriteFile.writeFile(FILE_PATH, workList);
     }
 
     @Override

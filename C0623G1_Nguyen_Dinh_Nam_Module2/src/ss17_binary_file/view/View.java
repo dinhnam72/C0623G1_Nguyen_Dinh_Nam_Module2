@@ -1,6 +1,8 @@
-package ss16_io_text_file.view;
+package ss17_binary_file.view;
 
-import ss16_io_text_file.controller.WorkController;
+
+import ss17_binary_file.controller.WorkController;
+
 
 public class View {
     public static void main(String[] args) {
