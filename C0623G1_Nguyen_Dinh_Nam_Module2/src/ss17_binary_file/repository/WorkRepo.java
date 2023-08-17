@@ -17,7 +17,7 @@ public class WorkRepo implements IWorkRepo {
     @Override
     public List<Work> getAll() {
         List<Work> workList = new ArrayList<>();
-        List<String> stringList = ReadAndWriteFile.readFromCSV(FILE_PATH);
+        List<String> stringList = ReadAndWriteFile.ReadFromCSV(FILE_PATH);
         String[] string;
         Work work;
         for (String str : stringList) {
@@ -39,7 +39,7 @@ public class WorkRepo implements IWorkRepo {
     public void add(Work work) {
         List<String> strings = new ArrayList<>();
         strings.add(work.inforToCSV());
-        ReadAndWriteFile.writeToCSV(strings, FILE_PATH, true);
+        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, true);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class WorkRepo implements IWorkRepo {
         for (Work work : works) {
             strings.add(work.inforToCSV());
         }
-        ReadAndWriteFile.writeToCSV(strings, FILE_PATH, false);
+        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, false);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class WorkRepo implements IWorkRepo {
         for (Work work1 : works) {
             strings.add(work1.inforToCSV());
         }
-        ReadAndWriteFile.writeToCSV(strings, FILE_PATH, false);
+        ReadAndWriteFile.WriteToCSV(strings, FILE_PATH, false);
     }
 
     @Override

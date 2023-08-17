@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteFile {
-    public static List<String> readFromCSV(String filePath){
+    public static List<String> ReadFromCSV(String filePath){
         File file = new File(filePath);
         List<String> workList = new ArrayList<>();
         try (FileReader fileReader = new FileReader(file);
@@ -24,7 +24,7 @@ public class ReadAndWriteFile {
         }
         return workList;
     }
-    public static void writeToCSV(List<String> strings, String filePath, boolean append){
+    public static void WriteToCSV(List<String> strings, String filePath, boolean append){
         File file = new File(filePath);
         try (FileWriter fileWriter = new FileWriter(file,append);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)
