@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class FruitRepo implements IFruitRepo {
-    Map<String, Fruit> fruitList = new HashMap<>();
+    private Map<String, Fruit> fruitList = new HashMap<>();
 
     {
         fruitList.put("1", new Fruit("Dua", "A", "27/05/2020", "15/06/2020", "Viet Nam", 40000));

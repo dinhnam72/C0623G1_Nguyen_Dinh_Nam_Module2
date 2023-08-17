@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class FruitService implements IFruitService {
-    public static IFruitRepo fruitRepo = new FruitRepo();
+    private static IFruitRepo fruitRepo = new FruitRepo();
 
     @Override
     public void displayFruit() {
