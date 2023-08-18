@@ -50,12 +50,10 @@ public class WorkRepo implements IWorkRepo {
     }
 
     @Override
-    public List<Work> searchToId(String id) {
+    public Work searchToId(String id) {
         List<Work> works = getAll();
-        List<Work> work = new ArrayList<>();
         int index = checkId(id);
-        work.add(works.get(index));
-        return work;
+        return works.get(index);
     }
 
     @Override
