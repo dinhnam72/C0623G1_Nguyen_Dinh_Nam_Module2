@@ -105,10 +105,7 @@ public class WorkService implements IWorkService {
                 System.out.println("Id khong ton tai");
             }
         } while (workRepo.checkId(id) == -1);
-        List<Work> workList = workRepo.searchToId(id);
-        for (Work work : workList) {
-            System.out.println(work);
-        }
+        System.out.println(workRepo.searchToId(id));
 
     }
 
