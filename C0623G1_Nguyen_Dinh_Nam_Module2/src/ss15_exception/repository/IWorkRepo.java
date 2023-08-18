@@ -15,7 +15,7 @@ public interface IWorkRepo {
 
     void edit(String id, Work work);
 
-    List<Work> searchToId(String id);
+    Work searchToId(String id);
 
     List<Work> searchToName(String name);
     List<Work> sortToName();
