@@ -49,7 +49,7 @@ public class WorkRepo implements IWorkRepo {
     @Override
     public Work searchToId(String id) {
         int index = checkId(id);
-        return  workList.get(index);
+        return workList.get(index);
     }
 
     @Override
@@ -83,10 +83,14 @@ public class WorkRepo implements IWorkRepo {
         Collections.sort(works, new Comparator<Work>() {
             @Override
             public int compare(Work o1, Work o2) {
-                if (o1.getMoney()== o2.getMoney()){
+                if (o1.getMoney() == o2.getMoney()) {
                     return o1.getName().compareTo(o2.getName());
-                }else {
-                    return (int) (o1.getMoney()-o2.getMoney());
+                } else {
+                    if (o1.getMoney() > o2.getMoney()) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
                 }
             }
         });
