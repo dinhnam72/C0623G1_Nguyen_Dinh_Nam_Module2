@@ -86,7 +86,11 @@ public class WorkRepo implements IWorkRepo {
                 if (o1.getMoney()== o2.getMoney()){
                     return o1.getName().compareTo(o2.getName());
                 }else {
-                    return (int) (o1.getMoney()-o2.getMoney());
+                    if (o1.getMoney() > o2.getMoney()) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
                 }
             }
         });
