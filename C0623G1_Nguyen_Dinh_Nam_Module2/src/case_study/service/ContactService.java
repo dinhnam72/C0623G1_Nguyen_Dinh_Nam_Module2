@@ -1,4 +1,4 @@
 package case_study.service;
 
-public class ContactRepository {
+public class ContactService {
 }

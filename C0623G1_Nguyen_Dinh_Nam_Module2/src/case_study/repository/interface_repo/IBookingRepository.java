@@ -1,4 +1,4 @@
-package case_study.service.interface_repo;
+package case_study.repository.interface_repo;
 
 public interface IBookingRepository {
 }

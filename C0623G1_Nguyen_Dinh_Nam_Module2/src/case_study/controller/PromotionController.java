@@ -1,2 +1,4 @@
-package case_study.controller;public class PromotionController {
+package case_study.controller;
+
+public class PromotionController {
 }
