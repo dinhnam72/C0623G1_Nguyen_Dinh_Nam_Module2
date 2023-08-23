@@ -43,14 +43,14 @@ public class CustomerService implements ICustomerService {
                 flag = true;
             }
         } while (flag);
-        String name = ValidatePerson.validateName();
-        LocalDate date = ValidatePerson.validateDayOfBirth();
-        String gender = ValidatePerson.validateGender();
-        String identityCard = ValidatePerson.validateIdentityCard();
-        String telephone = ValidatePerson.validateTelephone();
-        String email = ValidatePerson.validateEmail();
-        String type = ValidateCustomer.validateType();
-        String address = ValidateCustomer.address();
+        String name = ValidatePerson.inputAndCheckName();
+        LocalDate date = ValidatePerson.inputAndCheckDayOfBirth();
+        String gender = ValidatePerson.inputAndCheckGender();
+        String identityCard = ValidatePerson.inputAndCheckIdentityCard();
+        String telephone = ValidatePerson.inputAndCheckTelephone();
+        String email = ValidatePerson.inputAndCheckEmail();
+        String type = ValidateCustomer.inputAndCheckType();
+        String address = ValidateCustomer.inputAddress();
         Customer customer = new Customer(id, name, date, gender, identityCard, telephone, email, type, address);
         customerRepository.addCustomer(customer);
     }
@@ -65,14 +65,14 @@ public class CustomerService implements ICustomerService {
                 System.out.println("Id does not exist");
             }
         } while (customerRepository.checkId(id) == -1);
-        String name = ValidatePerson.validateName();
-        LocalDate date = ValidatePerson.validateDayOfBirth();
-        String gender = ValidatePerson.validateGender();
-        String identityCard = ValidatePerson.validateIdentityCard();
-        String telephone = ValidatePerson.validateTelephone();
-        String email = ValidatePerson.validateEmail();
-        String type = ValidateCustomer.validateType();
-        String address = ValidateCustomer.address();
+        String name = ValidatePerson.inputAndCheckName();
+        LocalDate date = ValidatePerson.inputAndCheckDayOfBirth();
+        String gender = ValidatePerson.inputAndCheckGender();
+        String identityCard = ValidatePerson.inputAndCheckIdentityCard();
+        String telephone = ValidatePerson.inputAndCheckTelephone();
+        String email = ValidatePerson.inputAndCheckEmail();
+        String type = ValidateCustomer.inputAndCheckType();
+        String address = ValidateCustomer.inputAddress();
         Customer customer = new Customer(id, name, date, gender, identityCard, telephone, email, type, address);
         customerRepository.editCustomer(id, customer);
     }

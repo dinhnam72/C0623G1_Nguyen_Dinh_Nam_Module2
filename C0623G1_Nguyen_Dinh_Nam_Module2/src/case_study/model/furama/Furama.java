@@ -1,5 +1,7 @@
 package case_study.model.furama;
 
+import java.util.Objects;
+
 public class Furama {
     private String id;
     private String serviceName;

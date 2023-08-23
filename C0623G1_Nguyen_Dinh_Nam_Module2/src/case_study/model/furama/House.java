@@ -1,5 +1,7 @@
 package case_study.model.furama;
 
+import java.util.Objects;
+
 public class House extends Furama {
     private String standard;
     private int floor;

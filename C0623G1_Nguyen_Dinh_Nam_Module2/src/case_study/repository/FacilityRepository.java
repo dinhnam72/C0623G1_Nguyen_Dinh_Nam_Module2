@@ -11,14 +11,15 @@ import java.util.Map;
 import java.util.Objects;
 
 public class FacilityRepository implements IFacilityRepository {
-    private static Map<Furama,Integer> furamaList = new LinkedHashMap();
+    private static Map<Furama, Integer> furamaList = new LinkedHashMap();
+
     static {
-        Villa villa = new Villa("VL-0001","Dads",100,4000000,15,"D","3 sao",100,3);
-        House house = new House("HO-0001","Lsdfds",80,120000,10,"M","2 sao",3);
-        Room room = new Room("RO-0001","Msdfdsf",30,120000,3,"Y","Ldfsd");
-        furamaList.put(villa,4);
-        furamaList.put(house,7);
-        furamaList.put(room,6);
+        Villa villa = new Villa("VL-0001", "Dads", 100, 4000000, 15, "D", "3 sao", 100, 3);
+        House house = new House("HO-0001", "Lsdfds", 80, 120000, 10, "M", "2 sao", 3);
+        Room room = new Room("RO-0001", "Msdfdsf", 30, 120000, 3, "Y", "Ldfsd");
+        furamaList.put(villa, 4);
+        furamaList.put(house, 7);
+        furamaList.put(room, 6);
     }
 
     @Override
@@ -27,12 +28,37 @@ public class FacilityRepository implements IFacilityRepository {
     }
 
     @Override
-    public void add(Furama furama) {
+    public boolean checkId(String id) {
+        for (Furama furama : this.getAll().keySet()) {
+            if (furama.getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    @Override
+    public void add(Furama furama) {
+        this.getAll().put(furama, 0);
+    }
+
+    @Override
+    public Map<Furama, Integer> facilityMaintenance() {
+        Map<Furama, Integer> facilityMaintenance = new LinkedHashMap<>();
+        for (Map.Entry<Furama, Integer> entry : this.getAll().entrySet()) {
+            if (entry.getValue() >= 5) {
+                facilityMaintenance.put(entry.getKey(), entry.getValue());
+            }
+        }
+        return facilityMaintenance;
     }
 
     @Override
     public void remove(String id) {
-
+        for (Furama furama : this.getAll().keySet()) {
+            if (furama.getId().equals(id)) {
+                this.getAll().remove(furama);
+            }
+        }
     }
 }

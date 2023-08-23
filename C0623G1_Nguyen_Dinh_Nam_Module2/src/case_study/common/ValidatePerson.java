@@ -12,7 +12,7 @@ public class ValidatePerson {
     private static final String REX_TELEPHONE = "^0\\d{9}$";
     private static final String REX_EMAIL = "^\\w{6,32}@\\w{2,12}\\.\\w{2,12}$";
     static final Scanner sc = new Scanner(System.in);
-    public static String validateName() {
+    public static String inputAndCheckName() {
         String name;
         do {
             System.out.print("Input name: ");
@@ -24,7 +24,7 @@ public class ValidatePerson {
         return name;
     }
 
-    public static LocalDate validateDayOfBirth() {
+    public static LocalDate inputAndCheckDayOfBirth() {
         LocalDate date = null;
         boolean flag;
         do {
@@ -47,7 +47,7 @@ public class ValidatePerson {
         return date;
     }
 
-    public static String validateGender() {
+    public static String inputAndCheckGender() {
         String gender;
         do {
             System.out.print("Input gender: ");
@@ -59,7 +59,7 @@ public class ValidatePerson {
         return gender;
     }
 
-    public static String validateIdentityCard() {
+    public static String inputAndCheckIdentityCard() {
         String identityCard;
         do {
             System.out.print("Input identityCard; ");
@@ -71,7 +71,7 @@ public class ValidatePerson {
         return identityCard;
     }
 
-    public static String validateTelephone() {
+    public static String inputAndCheckTelephone() {
         String telephone;
         do {
             System.out.print("Input telephone: ");
@@ -83,7 +83,7 @@ public class ValidatePerson {
         return telephone;
     }
 
-    public static String validateEmail() {
+    public static String inputAndCheckEmail() {
         String email;
         do {
             System.out.print("Input email: ");

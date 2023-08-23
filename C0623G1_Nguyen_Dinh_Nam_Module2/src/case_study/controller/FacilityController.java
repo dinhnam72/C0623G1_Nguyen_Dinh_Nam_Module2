@@ -6,7 +6,7 @@ import case_study.service.interface_service.IFacilityService;
 import java.util.Scanner;
 
 public class FacilityController {
-    public static void showMenuFacility(){
+    public static void showMenuFacility() {
         IFacilityService facilityService = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         do {
@@ -20,17 +20,44 @@ public class FacilityController {
             try {
                 System.out.print("Input number: ");
                 select = Integer.parseInt(scanner.nextLine());
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.println("You must enter the number");
                 continue;
             }
-            switch (select){
+            switch (select) {
                 case 1:
                     facilityService.display();
                     break;
                 case 2:
-                    facilityService.add();
-                    break;
+                    do {
+                        System.out.println("1. Add New Villa");
+                        System.out.println("2. Add New House");
+                        System.out.println("3. Add New Room");
+                        System.out.println("4. Back to menu");
+                        int select1;
+                        try {
+                            System.out.print("Input number: ");
+                            select1 = Integer.parseInt(scanner.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("You must enter the number");
+                            continue;
+                        }
+                        switch (select1) {
+                            case 1:
+                                facilityService.addVilla();
+                                break;
+                            case 2:
+                                facilityService.addHouse();
+                                break;
+                            case 3:
+                                facilityService.addRoom();
+                                break;
+                            case 4:
+                                showMenuFacility();
+                            default:
+                                System.out.println("Number does not exist in the system");
+                        }
+                    } while (true);
                 case 3:
                     facilityService.facilityMaintenance();
                     break;
@@ -42,6 +69,6 @@ public class FacilityController {
                 default:
                     System.out.println("Number does not exist in the system");
             }
-        }while (true);
+        } while (true);
     }
 }

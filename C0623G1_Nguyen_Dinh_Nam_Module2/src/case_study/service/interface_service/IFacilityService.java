@@ -2,7 +2,9 @@ package case_study.service.interface_service;
 
 public interface IFacilityService {
     void display();
-    void add();
+    void addVilla();
+    void addHouse();
+    void addRoom();
     void facilityMaintenance();
     void remove();
 }

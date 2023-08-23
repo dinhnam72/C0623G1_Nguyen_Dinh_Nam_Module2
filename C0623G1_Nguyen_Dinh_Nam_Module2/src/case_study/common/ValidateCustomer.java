@@ -13,7 +13,7 @@ public class ValidateCustomer {
         }
         return flag;
     }
-    public static String validateType(){
+    public static String inputAndCheckType(){
         String type;
         do {
             System.out.print("Input type: ");
@@ -24,7 +24,7 @@ public class ValidateCustomer {
         }while (!type.matches(REX_TYPE));
         return type;
     }
-    public static String address(){
+    public static String inputAddress(){
         System.out.print("Input address: ");
         String address = sc.nextLine();
         return address;

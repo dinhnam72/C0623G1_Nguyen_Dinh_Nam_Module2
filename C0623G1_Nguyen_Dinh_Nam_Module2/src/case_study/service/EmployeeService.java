@@ -37,21 +37,20 @@ public class EmployeeService implements IEmployeeService {
                 flag = true;
                 continue;
             }
-            if (ValidateEmployee.validateIdEmployee(id)) {
+            if (ValidateEmployee.inputAndCheckIdEmployee(id)) {
                 System.out.println("Employee ID must be in the correct format:NV-YYYY (Y :0-9)");
                 flag = true;
             }
         } while (flag);
-
-        String name = ValidatePerson.validateName();
-        LocalDate date = ValidatePerson.validateDayOfBirth();
-        String gender = ValidatePerson.validateGender();
-        String identityCard = ValidatePerson.validateIdentityCard();
-        String telephone = ValidatePerson.validateTelephone();
-        String email = ValidatePerson.validateEmail();
-        String degree = ValidateEmployee.validateDegree();
-        String position = ValidateEmployee.validatePosition();
-        Double wage = ValidateEmployee.validateWage();
+        String name = ValidatePerson.inputAndCheckName();
+        LocalDate date = ValidatePerson.inputAndCheckDayOfBirth();
+        String gender = ValidatePerson.inputAndCheckGender();
+        String identityCard = ValidatePerson.inputAndCheckIdentityCard();
+        String telephone = ValidatePerson.inputAndCheckTelephone();
+        String email = ValidatePerson.inputAndCheckEmail();
+        String degree = ValidateEmployee.inputAndCheckDegree();
+        String position = ValidateEmployee.inputAndCheckPosition();
+        Double wage = ValidateEmployee.inputAndCheckWage();
         Employee employee = new Employee(id, name, date, gender, identityCard, telephone, email, degree, position, wage);
         employeeRepository.addEmployee(employee);
 
@@ -67,15 +66,15 @@ public class EmployeeService implements IEmployeeService {
                 System.out.println("Id does not exist");
             }
         } while (employeeRepository.checkId(id) == -1);
-        String name = ValidatePerson.validateName();
-        LocalDate date = ValidatePerson.validateDayOfBirth();
-        String gender = ValidatePerson.validateGender();
-        String identityCard = ValidatePerson.validateIdentityCard();
-        String telephone = ValidatePerson.validateTelephone();
-        String email = ValidatePerson.validateEmail();
-        String degree = ValidateEmployee.validateDegree();
-        String position = ValidateEmployee.validatePosition();
-        Double wage = ValidateEmployee.validateWage();
+        String name = ValidatePerson.inputAndCheckName();
+        LocalDate date = ValidatePerson.inputAndCheckDayOfBirth();
+        String gender = ValidatePerson.inputAndCheckGender();
+        String identityCard = ValidatePerson.inputAndCheckIdentityCard();
+        String telephone = ValidatePerson.inputAndCheckTelephone();
+        String email = ValidatePerson.inputAndCheckEmail();
+        String degree = ValidateEmployee.inputAndCheckDegree();
+        String position = ValidateEmployee.inputAndCheckPosition();
+        Double wage = ValidateEmployee.inputAndCheckWage();
         Employee employee = new Employee(id, name, date, gender, identityCard, telephone, email, degree, position, wage);
         employeeRepository.editEmployee(id, employee);
     }

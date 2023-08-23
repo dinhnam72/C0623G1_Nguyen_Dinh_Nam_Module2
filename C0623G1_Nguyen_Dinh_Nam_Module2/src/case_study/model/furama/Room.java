@@ -1,5 +1,7 @@
 package case_study.model.furama;
 
+import java.util.Objects;
+
 public class Room extends Furama {
     private String freeService;
 
@@ -24,5 +26,12 @@ public class Room extends Furama {
         return "Room{" + super.toString() +
                 "freeService='" + freeService + '\'' +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        return Objects.equals(room.getId(), super.getId());
     }
 }
