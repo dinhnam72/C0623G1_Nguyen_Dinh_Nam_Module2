@@ -28,13 +28,13 @@ public class FacilityRepository implements IFacilityRepository {
     }
 
     @Override
-    public boolean checkId(String id) {
+    public Furama checkId(String id) {
         for (Furama furama : this.getAll().keySet()) {
             if (furama.getId().equals(id)) {
-                return true;
+                return furama;
             }
         }
-        return false;
+        return null;
     }
 
     @Override
@@ -54,11 +54,7 @@ public class FacilityRepository implements IFacilityRepository {
     }
 
     @Override
-    public void remove(String id) {
-        for (Furama furama : this.getAll().keySet()) {
-            if (furama.getId().equals(id)) {
-                this.getAll().remove(furama);
-            }
-        }
+    public void remove(Furama furama) {
+        this.getAll().remove(furama);
     }
 }

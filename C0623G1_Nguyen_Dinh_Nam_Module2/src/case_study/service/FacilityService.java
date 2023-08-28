@@ -23,16 +23,16 @@ public class FacilityService implements IFacilityService {
     }
 
     Scanner scanner = new Scanner(System.in);
+    boolean flag;
 
     @Override
     public void addVilla() {
         String id;
-        boolean flag;
         do {
             flag = false;
             System.out.print("Input id: ");
             id = scanner.nextLine();
-            if (facilityRepository.checkId(id)) {
+            if (facilityRepository.checkId(id) != null) {
                 System.out.println("Duplicate id");
                 flag = true;
                 continue;
@@ -50,19 +50,18 @@ public class FacilityService implements IFacilityService {
         String standard = ValidateVilla.inputAndCheckStandard();
         double swwimmingArea = ValidateVilla.inputAndCheckSwimmingArea();
         int floor = ValidateVilla.inputAndCheckFloor();
-        Villa villa1 = new Villa(id,name,area,costs,maxPerson,type,standard,swwimmingArea,floor);
+        Villa villa1 = new Villa(id, name, area, costs, maxPerson, type, standard, swwimmingArea, floor);
         facilityRepository.add(villa1);
     }
 
     @Override
     public void addHouse() {
         String id;
-        boolean flag;
         do {
             flag = false;
             System.out.print("Input id: ");
             id = scanner.nextLine();
-            if (facilityRepository.checkId(id)) {
+            if (facilityRepository.checkId(id) != null) {
                 System.out.println("Duplicate id");
                 flag = true;
                 continue;
@@ -79,19 +78,18 @@ public class FacilityService implements IFacilityService {
         String type = ValidateFurama.inputAndCheckType();
         String standard = ValidateHouse.inputAndCheckStandard();
         int floor = ValidateHouse.inputAndCheckFloor();
-        House house1 = new House(id,name,area,costs,maxPerson,type,standard,floor);
+        House house1 = new House(id, name, area, costs, maxPerson, type, standard, floor);
         facilityRepository.add(house1);
     }
 
     @Override
     public void addRoom() {
         String id;
-        boolean flag;
         do {
             flag = false;
             System.out.print("Input id: ");
             id = scanner.nextLine();
-            if (facilityRepository.checkId(id)) {
+            if (facilityRepository.checkId(id) != null) {
                 System.out.println("Duplicate id");
                 flag = true;
                 continue;
@@ -107,16 +105,16 @@ public class FacilityService implements IFacilityService {
         int maxPerson = ValidateFurama.inputAndCheckMaxPerson();
         String type = ValidateFurama.inputAndCheckType();
         String freeService = ValidateRoom.inputFreeService();
-        Room room1 = new Room(id,name,area,costs,maxPerson,type,freeService);
+        Room room1 = new Room(id, name, area, costs, maxPerson, type, freeService);
         facilityRepository.add(room1);
     }
 
     @Override
     public void facilityMaintenance() {
-        Map<Furama,Integer> facilityMaintenance = facilityRepository.facilityMaintenance();
-        if (facilityMaintenance.size()==0){
+        Map<Furama, Integer> facilityMaintenance = facilityRepository.facilityMaintenance();
+        if (facilityMaintenance.size() == 0) {
             System.out.println("There are no facilitys in need of maintenance");
-        }else {
+        } else {
             for (Map.Entry<Furama, Integer> entry : facilityMaintenance.entrySet()) {
                 System.out.println(entry.getKey() + " - Value = " + entry.getValue());
             }
@@ -126,17 +124,18 @@ public class FacilityService implements IFacilityService {
     @Override
     public void remove() {
         String id;
-        boolean flag;
         do {
             flag = false;
             System.out.print("Input id: ");
             id = scanner.nextLine();
-            if (!facilityRepository.checkId(id)) {
+            if (facilityRepository.checkId(id) == null) {
                 System.out.println("Id does not exist");
                 flag = true;
+            } else {
+                facilityRepository.remove(facilityRepository.checkId(id));
             }
 
         } while (flag);
-        facilityRepository.remove(id);
+
     }
 }

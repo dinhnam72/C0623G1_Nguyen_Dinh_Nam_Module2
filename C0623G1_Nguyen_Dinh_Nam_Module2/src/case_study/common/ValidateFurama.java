@@ -84,7 +84,7 @@ public class ValidateFurama {
             System.out.print("Input type: ");
             type = sc.nextLine();
             if (!type.matches(REX_TYPE)) {
-                System.out.println("The type is not in the correct format");
+                System.out.println("The type is not in the correct format (H|D|W|M|Y)");
             }
         } while (!type.matches(REX_TYPE));
         return type;
