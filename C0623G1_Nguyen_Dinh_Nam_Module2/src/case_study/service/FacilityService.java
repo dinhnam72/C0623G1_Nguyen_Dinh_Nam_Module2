@@ -18,7 +18,7 @@ public class FacilityService implements IFacilityService {
     @Override
     public void display() {
         for (Map.Entry<Furama, Integer> entry : facilityRepository.getAll().entrySet()) {
-            System.out.println(entry.getKey() + " - Value = " + entry.getValue());
+            System.out.println(entry.getKey() + " - Number of uses = " + entry.getValue());
         }
     }
 

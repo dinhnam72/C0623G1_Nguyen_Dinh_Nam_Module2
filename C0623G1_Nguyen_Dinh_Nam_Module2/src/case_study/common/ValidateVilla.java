@@ -3,7 +3,7 @@ package case_study.common;
 import java.util.Scanner;
 
 public class ValidateVilla {
-    private static final String REX_ID_VILLA = "^VL-\\d{4}$";
+    private static final String REX_ID_VILLA = "^SVVL-\\d{4}$";
     private static final String REX_STANDARD = "^[A-Z][a-z]*(\\s[A-Z][a-z]*)*$";
     static Scanner scanner = new Scanner(System.in);
     static boolean flag;

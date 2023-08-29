@@ -24,7 +24,7 @@ public class ValidateEmployee {
     public static String inputAndCheckDegree() {
         String degree;
         do {
-            System.out.print("Input degree: ");
+            System.out.print("Input degree(TC|CD|DH|SDH): ");
             degree = sc.nextLine();
             if (!degree.matches(REX_DEGREE)) {
                 System.out.println("Enter the wrong degree");
@@ -36,7 +36,7 @@ public class ValidateEmployee {
     public static String inputAndCheckPosition() {
         String position;
         do {
-            System.out.print("Input position: ");
+            System.out.print("Input position(LT|PV|CV|GS|QL|GD): ");
             position = sc.nextLine();
             if (!position.matches(REX_POSITION)) {
                 System.out.println("Enter the wrong position");

@@ -14,9 +14,9 @@ public class FacilityRepository implements IFacilityRepository {
     private static Map<Furama, Integer> furamaList = new LinkedHashMap();
 
     static {
-        Villa villa = new Villa("VL-0001", "Dads", 100, 4000000, 15, "D", "3 sao", 100, 3);
-        House house = new House("HO-0001", "Lsdfds", 80, 120000, 10, "M", "2 sao", 3);
-        Room room = new Room("RO-0001", "Msdfdsf", 30, 120000, 3, "Y", "Ldfsd");
+        Villa villa = new Villa("SVVL-0001", "Dads", 100, 4000000, 15, "D", "3 sao", 100, 3);
+        House house = new House("SVHO-0001", "Lsdfds", 80, 120000, 10, "M", "2 sao", 3);
+        Room room = new Room("SVRO-0001", "Msdfdsf", 30, 120000, 3, "Y", "Ldfsd");
         furamaList.put(villa, 4);
         furamaList.put(house, 7);
         furamaList.put(room, 6);
