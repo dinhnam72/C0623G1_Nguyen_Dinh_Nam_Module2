@@ -33,12 +33,15 @@ public class EmployeeController {
                     break;
                 case 2:
                     employeeService.add();
+                    System.out.println("Successfully added employees");
                     break;
                 case 3:
                     employeeService.edit();
+                    System.out.println("Successful employee information milk");
                     break;
                 case 4:
                     employeeService.remove();
+                    System.out.println("Delete employee successfully");
                     break;
                 case 5:
                     employeeService.searchByName();

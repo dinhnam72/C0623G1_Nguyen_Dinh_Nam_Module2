@@ -32,12 +32,15 @@ public class CustomerController {
                     break;
                 case 2:
                     customerService.add();
+                    System.out.println("Successfully added customer");
                     break;
                 case 3:
                     customerService.edit();
+                    System.out.println("Successful customer information milk");
                     break;
                 case 4:
                     customerService.remove();
+                    System.out.println("Delete customer successfully");
                     break;
                 case 5:
                     customerService.searchByName();

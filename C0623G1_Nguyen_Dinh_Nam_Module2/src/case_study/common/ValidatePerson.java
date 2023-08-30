@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ValidatePerson {
     private static final String REX_NAME = "^[A-Z][a-z]*(\\s[A-Z][a-z]*)+$";
     private static final String REX_GENDER = "^(Nam)|(Nu)$";
-    private static final String REX_IDENTITY_CARD = "^(\\d|\\d{4})\\d{8}$";
+    private static final String REX_IDENTITY_CARD = "^\\d{9}|\\d{12}$";
     private static final String REX_TELEPHONE = "^0\\d{9}$";
     private static final String REX_EMAIL = "^\\w{6,32}@\\w{2,12}\\.\\w{2,12}$";
     static final Scanner sc = new Scanner(System.in);

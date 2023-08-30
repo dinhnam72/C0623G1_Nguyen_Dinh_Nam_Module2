@@ -45,12 +45,15 @@ public class FacilityController {
                         switch (select1) {
                             case 1:
                                 facilityService.addVilla();
+                                System.out.println("Add successful Villas");
                                 break;
                             case 2:
                                 facilityService.addHouse();
+                                System.out.println("Add successful Houses");
                                 break;
                             case 3:
                                 facilityService.addRoom();
+                                System.out.println("Add successful Rooms");
                                 break;
                             case 4:
                                 showMenuFacility();
@@ -63,6 +66,7 @@ public class FacilityController {
                     break;
                 case 4:
                     facilityService.remove();
+                    System.out.println("Successful delete");
                     break;
                 case 5:
                     FuramaController.showMenu();
